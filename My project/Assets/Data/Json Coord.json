@@ -1,0 +1,148 @@
+{
+  "levels": [
+    {
+      "id": 1,
+      "name": "IDOR y Enumeración",
+      "timePerQuestion": 8,
+      "questions": [
+        {
+          "question": "Si cambias un número en una URL y ves datos de otra persona, eso es:",
+          "options": ["Debugging", "IDOR", "Caching"],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Cuál es el mayor riesgo de usar IDs secuenciales?",
+          "options": ["Más almacenamiento", "Enumeración masiva de datos", "Mayor latencia"],
+          "correctIndex": 1
+        },
+        {
+          "question": "Un usuario autenticado ve datos de otros clientes. ¿El sistema es seguro?",
+          "options": ["Sí", "No, falla control de acceso"],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Rate Limiting",
+      "timePerQuestion": 7,
+      "questions": [
+        {
+          "question": "¿Qué permite la ausencia de rate limiting?",
+          "options": ["Mejor UX", "Ataques automatizados", "Menos CPU"],
+          "correctIndex": 1
+        },
+        {
+          "question": "Miles de peticiones por segundo desde una IP deberían provocar:",
+          "options": ["Nada", "Bloqueo o throttling", "Más ancho de banda"],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Autenticación Débil",
+      "timePerQuestion": 6,
+      "questions": [
+        {
+          "question": "Mensajes distintos en login permiten:",
+          "options": ["UX clara", "Enumeración de usuarios", "Cacheo"],
+          "correctIndex": 1
+        },
+        {
+          "question": "Usuario = contraseña es un ejemplo de:",
+          "options": ["MFA", "Credenciales débiles", "Tokenización"],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Exposición de Información Sensible",
+      "timePerQuestion": 7,
+      "questions": [
+        {
+          "question": "¿Qué información NO debería devolverse sin autorización?",
+          "options": ["Idioma del sistema", "Roles y permisos internos", "Tema visual"],
+          "correctIndex": 1
+        },
+        {
+          "question": "Enviar más datos de los necesarios viola el principio de:",
+          "options": ["Alta disponibilidad", "Mínimo privilegio", "Escalabilidad"],
+          "correctIndex": 1
+        },
+        {
+          "question": "Respuestas diferentes para errores permiten:",
+          "options": ["Mejor UX", "Enumeración y fingerprinting", "Menor latencia"],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Validaciones Backend",
+      "timePerQuestion": 6,
+      "questions": [
+        {
+          "question": "¿Dónde deben validarse los permisos de acceso?",
+          "options": ["Frontend", "Backend", "Navegador"],
+          "correctIndex": 1
+        },
+        {
+          "question": "Confiar en datos enviados por el cliente es:",
+          "options": ["Seguro", "Un riesgo de seguridad", "Una buena práctica"],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué identificador reduce el riesgo de enumeración?",
+          "options": ["Secuencial", "UUID", "Incremental"],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Monitoreo y Detección",
+      "timePerQuestion": 5,
+      "questions": [
+        {
+          "question": "¿Qué indica múltiples accesos secuenciales a distintos IDs?",
+          "options": ["Uso normal", "Posible enumeración", "Cacheo"],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué ayuda a detectar ataques en tiempo real?",
+          "options": ["Logs y alertas", "Cambiar colores", "Más endpoints"],
+          "correctIndex": 0
+        },
+        {
+          "question": "El monitoreo continuo permite:",
+          "options": ["Responder a incidentes", "Evitar bugs", "Mejorar UX"],
+          "correctIndex": 0
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Escenarios Reales (Boss Level)",
+      "timePerQuestion": 5,
+      "questions": [
+        {
+          "question": "Un atacante automatiza miles de consultas a guías. ¿Qué controles faltan?",
+          "options": ["CSS", "Rate limiting y autorización", "SEO"],
+          "correctIndex": 1
+        },
+        {
+          "question": "Un empleado accede a datos de otro sin permiso. ¿Qué vulnerabilidad es?",
+          "options": ["Broken Access Control", "XSS", "CSRF"],
+          "correctIndex": 0
+        },
+        {
+          "question": "Cambiar un parámetro en la ruta devuelve datos internos. Esto es:",
+          "options": ["Feature", "Information Disclosure", "Compresión"],
+          "correctIndex": 1
+        }
+      ]
+    }
+  ]
+}

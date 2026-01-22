@@ -1,0 +1,120 @@
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using System.Collections;
+
+public class QuizGameManager : MonoBehaviour
+{
+    [Header("UI")]
+    public TextMeshProUGUI questionText;
+    public Button[] optionButtons;
+    public TextMeshProUGUI[] optionTexts;
+    public TextMeshProUGUI timerText;
+    public CanvasGroup questionPanel;
+
+    [Header("Data")]
+    public QuestionLoader loader;
+
+    private Level currentLevel;
+    private int questionIndex = 0, level = 0;
+    private float timeRemaining;
+    private bool isAnswering = true;
+
+    void Start()
+    {
+        LoadLevel(0);
+    }
+
+    void LoadLevel(int levelIndex)
+    {
+        currentLevel = loader.gameData.levels[levelIndex];
+        questionIndex = 0;
+        LoadQuestion();
+    }
+
+    void LoadQuestion()
+    {
+        if (questionIndex >= currentLevel.questions.Count)
+        {
+            Debug.Log("Nivel completado");
+            level++;
+            LoadLevel(level);
+            return;
+        }
+
+        StartCoroutine(TransitionOutIn());
+
+        Question q = currentLevel.questions[questionIndex];
+        questionText.text = q.question;
+
+        for (int i = 0; i < optionButtons.Length; i++)
+        {
+            int index = i;
+            if (i < q.options.Count)
+            {
+                optionButtons[i].gameObject.SetActive(true);
+                optionTexts[i].text = q.options[i];
+                optionButtons[i].onClick.RemoveAllListeners();
+                optionButtons[i].onClick.AddListener(() => Answer(index));
+            }
+            else optionButtons[i].gameObject.SetActive(false);
+        }
+
+        timeRemaining = currentLevel.timePerQuestion;
+        isAnswering = true;
+    }
+
+    void Update()
+    {
+        if (!isAnswering) return;
+
+        timeRemaining -= Time.deltaTime;
+        timerText.text = Mathf.Ceil(timeRemaining).ToString();
+
+        if (timeRemaining <= 0)
+        {
+            isAnswering = false;
+            NextQuestion();
+        }
+    }
+
+    void Answer(int index)
+    {
+        isAnswering = false;
+        int correct = currentLevel.questions[questionIndex].correctIndex;
+
+        if (index == correct)
+        {
+            Debug.Log("Respuesta correcta");
+        }
+        else
+        {
+            Debug.Log("Respuesta incorrecta");
+        }
+
+        NextQuestion();
+    }
+
+    void NextQuestion()
+    {
+        questionIndex++;
+        Invoke(nameof(LoadQuestion), 0.5f);
+    }
+
+    IEnumerator TransitionOutIn()
+    {
+        yield return Fade(1, 0);
+        yield return Fade(0, 1);
+    }
+
+    IEnumerator Fade(float from, float to)
+    {
+        float t = 0;
+        while (t < 1)
+        {
+            t += Time.deltaTime * 4;
+            questionPanel.alpha = Mathf.Lerp(from, to, t);
+            yield return null;
+        }
+    }
+}

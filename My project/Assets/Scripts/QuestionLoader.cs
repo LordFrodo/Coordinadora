@@ -1,0 +1,36 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+[System.Serializable]
+public class Question
+{
+    public string question;
+    public List<string> options;
+    public int correctIndex;
+}
+
+[System.Serializable]
+public class Level
+{
+    public int id;
+    public string name;
+    public int timePerQuestion;
+    public List<Question> questions;
+}
+
+[System.Serializable]
+public class GameData
+{
+    public List<Level> levels;
+}
+
+public class QuestionLoader : MonoBehaviour
+{
+    public TextAsset questionsJson;
+    public GameData gameData;
+
+    void Awake()
+    {
+        gameData = JsonUtility.FromJson<GameData>(questionsJson.text);
+    }
+}
