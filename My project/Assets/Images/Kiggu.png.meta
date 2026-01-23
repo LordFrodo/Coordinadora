@@ -1,0 +1,676 @@
+fileFormatVersion: 2
+guid: 00b2f403d5f6fe74b9c7eff0d8dc8d39
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4035922685832300998
+    second: Kiggu_0
+  - first:
+      213: -2332217972472407818
+    second: Kiggu_1
+  - first:
+      213: 8620526530520005328
+    second: Kiggu_2
+  - first:
+      213: 7821923164947921618
+    second: Kiggu_3
+  - first:
+      213: 6352051792410128437
+    second: Kiggu_4
+  - first:
+      213: -490041503731144256
+    second: Kiggu_5
+  - first:
+      213: 6314837665371733135
+    second: Kiggu_6
+  - first:
+      213: 224206680873670991
+    second: Kiggu_7
+  - first:
+      213: 4854864948080130186
+    second: Kiggu_8
+  - first:
+      213: 3274103574063377511
+    second: Kiggu_9
+  - first:
+      213: -2481390359064164572
+    second: Kiggu_10
+  - first:
+      213: 7224645404982620074
+    second: Kiggu_11
+  - first:
+      213: 4540332758367914620
+    second: Kiggu_12
+  - first:
+      213: -6249327125789772902
+    second: Kiggu_13
+  - first:
+      213: 5964284504358646882
+    second: Kiggu_14
+  - first:
+      213: -4092373796394437488
+    second: Kiggu_15
+  - first:
+      213: 1614299049397864164
+    second: Kiggu_16
+  - first:
+      213: -6649555528657275484
+    second: Kiggu_17
+  - first:
+      213: -1502625577289328762
+    second: Kiggu_18
+  - first:
+      213: -2166693245176373988
+    second: Kiggu_19
+  - first:
+      213: 8165545669880044604
+    second: Kiggu_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Kiggu_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 68
+        width: 111
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c989fdac4a720830800000000000000
+      internalID: 4035922685832300998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_1
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 87
+        width: 101
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f810045c1c42afd0800000000000000
+      internalID: -2332217972472407818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_2
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 172
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dab97cb43342a770800000000000000
+      internalID: 8620526530520005328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_3
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 48
+        width: 97
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dabe1b1dad0d8c60800000000000000
+      internalID: 7821923164947921618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_4
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 48
+        width: 98
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5303d795375072850800000000000000
+      internalID: 6352051792410128437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_5
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 85
+        width: 88
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c928e449d50339f0800000000000000
+      internalID: -490041503731144256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_6
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 160
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8c3db2366fc2a750800000000000000
+      internalID: 6314837665371733135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_7
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 88
+        width: 24
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f499eb1d9ca8c1300800000000000000
+      internalID: 224206680873670991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_8
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 0
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a88bfc6b2f1ff5340800000000000000
+      internalID: 4854864948080130186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_9
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 0
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76c62e98ad3ff6d20800000000000000
+      internalID: 3274103574063377511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_10
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 0
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 427c6ea8d94509dd0800000000000000
+      internalID: -2481390359064164572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_11
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 0
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aafa520d7b8134460800000000000000
+      internalID: 7224645404982620074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_12
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7ac6988690820f30800000000000000
+      internalID: 4540332758367914620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_13
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 0
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a937616e61ee549a0800000000000000
+      internalID: -6249327125789772902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_14
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 0
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 264f9a5182565c250800000000000000
+      internalID: 5964284504358646882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_15
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 0
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 094fac9e6b7f437c0800000000000000
+      internalID: -4092373796394437488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_16
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 0
+        width: 20
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e64c98be64276610800000000000000
+      internalID: 1614299049397864164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_17
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 0
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a5f5204a7808b3a0800000000000000
+      internalID: -6649555528657275484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_18
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 0
+        width: 7
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 687d04baff9952be0800000000000000
+      internalID: -1502625577289328762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_19
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 0
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1d160029fb5ee1e0800000000000000
+      internalID: -2166693245176373988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kiggu_20
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 0
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3cdd6a1688d15170800000000000000
+      internalID: 8165545669880044604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Kiggu_0: 4035922685832300998
+      Kiggu_1: -2332217972472407818
+      Kiggu_10: -2481390359064164572
+      Kiggu_11: 7224645404982620074
+      Kiggu_12: 4540332758367914620
+      Kiggu_13: -6249327125789772902
+      Kiggu_14: 5964284504358646882
+      Kiggu_15: -4092373796394437488
+      Kiggu_16: 1614299049397864164
+      Kiggu_17: -6649555528657275484
+      Kiggu_18: -1502625577289328762
+      Kiggu_19: -2166693245176373988
+      Kiggu_2: 8620526530520005328
+      Kiggu_20: 8165545669880044604
+      Kiggu_3: 7821923164947921618
+      Kiggu_4: 6352051792410128437
+      Kiggu_5: -490041503731144256
+      Kiggu_6: 6314837665371733135
+      Kiggu_7: 224206680873670991
+      Kiggu_8: 4854864948080130186
+      Kiggu_9: 3274103574063377511
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
