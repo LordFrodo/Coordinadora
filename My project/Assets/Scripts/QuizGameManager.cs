@@ -15,9 +15,11 @@ public class QuizGameManager : MonoBehaviour
 
     [Header("Data")]
     public QuestionLoader loader;
+    [Header("Slider")]
+    public SlideAnimation slider;
 
     private Level currentLevel;
-    private int questionIndex = 0, level = 0;
+    private int questionIndex = 0, level = 0, score = 0;
     private float timeRemaining;
     private bool isAnswering = false;
 
@@ -40,7 +42,7 @@ public class QuizGameManager : MonoBehaviour
         }
     }
 
-    private void GameComplete()
+    public void GameComplete()
     {
         throw new NotImplementedException();
     }
@@ -99,10 +101,13 @@ public class QuizGameManager : MonoBehaviour
         if (index == correct)
         {
             Debug.Log("Respuesta correcta");
+            score += 20;
+            slider.CorrectAnswer();
         }
         else
         {
             Debug.Log("Respuesta incorrecta");
+            slider.WrongAnswer();
         }
 
         NextQuestion();
