@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using System;
 
 public class QuizGameManager : MonoBehaviour
 {
@@ -18,18 +19,30 @@ public class QuizGameManager : MonoBehaviour
     private Level currentLevel;
     private int questionIndex = 0, level = 0;
     private float timeRemaining;
-    private bool isAnswering = true;
+    private bool isAnswering = false;
 
-    void Start()
+
+    public void LoadLevel(int levelIndex)
     {
-        LoadLevel(0);
+        if(levelIndex < loader.gameData.levels.Count)
+        {
+            isAnswering = true;
+            currentLevel = loader.gameData.levels[levelIndex];
+            questionIndex = 0;
+            LoadQuestion();
+        }
+        else
+        {
+            isAnswering= false;
+            currentLevel = null;
+            questionIndex = 0;
+            GameComplete();
+        }
     }
 
-    void LoadLevel(int levelIndex)
+    private void GameComplete()
     {
-        currentLevel = loader.gameData.levels[levelIndex];
-        questionIndex = 0;
-        LoadQuestion();
+        throw new NotImplementedException();
     }
 
     void LoadQuestion()
