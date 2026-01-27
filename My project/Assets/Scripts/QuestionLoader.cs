@@ -35,11 +35,5 @@ public class QuestionLoader : MonoBehaviour
     void Awake()
     {
         gameData = JsonUtility.FromJson<GameData>(questionsJson.text);
-        StartCoroutine("DataLoaded", 1.5f);
-    }
-    
-    public void DataLoaded()
-    {
-        OnDataLoaded?.Invoke();
     }
 }

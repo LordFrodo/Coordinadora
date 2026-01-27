@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -26,13 +27,13 @@ public class SlideAnimation:MonoBehaviour
     [Header("GameManager")]
     [SerializeField] private QuizGameManager quizGameManager;
 
-    private float currentValue;
-    private float stepPerQuestion;
+    public float currentValue;
+    public  float stepPerQuestion;
 
-
-    void OnEnable() => quizGameManager.loader.OnDataLoaded += Initialize;
-
-    void OnDisable() => quizGameManager.loader.OnDataLoaded -= Initialize;
+    private void Awake()
+    {
+        StartCoroutine("Initialize", 2f);
+    }
     /// <summary>
     /// Inicializa la barra usando el total de preguntas del juego
     /// </summary>
@@ -43,19 +44,10 @@ public class SlideAnimation:MonoBehaviour
         {
             totalQuestions += item.questions.Count;
         }
-        
+        stepPerQuestion = 1f / totalQuestions;
         currentValue = Mathf.Clamp01(initialValue);
-        stepPerQuestion = 1f / Mathf.Max(1, totalQuestions);
-
+        Console.WriteLine(stepPerQuestion.ToString());
         UpdateUI();
-    }
-
-    /// <summary>
-    /// Llamar cuando el jugador responde correctamente
-    /// </summary>
-    public void CorrectAnswer()
-    {
-        ModifyBar(stepPerQuestion * rewardMultiplier);
     }
 
     /// <summary>
@@ -63,17 +55,18 @@ public class SlideAnimation:MonoBehaviour
     /// </summary>
     public void WrongAnswer()
     {
-        ModifyBar(-stepPerQuestion);
+        ModifyBar(-stepPerQuestion*1.75f);
     }
 
     private void ModifyBar(float amount)
     {
+
         currentValue = Mathf.Clamp01(currentValue + amount);
         UpdateUI();
 
         OnPercentageChanged?.Invoke(currentValue * 100f);
 
-        if (currentValue <= 0f)
+        if (securitySlider.value <= 0f)
         {
             OnBarEmpty?.Invoke();
         }

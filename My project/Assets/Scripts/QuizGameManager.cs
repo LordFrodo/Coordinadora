@@ -21,37 +21,63 @@ public class QuizGameManager : MonoBehaviour
     private Level currentLevel;
     private int questionIndex = 0, level = 0, score = 0;
     private float timeRemaining;
-    private bool isAnswering = false;
+    private bool isAnswering = false, isGameRunning;
+
+    [Header("Complete Game")]
+    public GameObject completeScreen; 
+    public GameObject hackedPanel; 
+    public GameObject gameScreen; 
+    public TextMeshProUGUI titleCompleteGame;
+    public TextMeshProUGUI bodyCompleteGame;
 
 
     public void LoadLevel(int levelIndex)
     {
-        if(levelIndex < loader.gameData.levels.Count)
+        if(isGameRunning && slider.securitySlider.value > 0)
         {
-            isAnswering = true;
-            currentLevel = loader.gameData.levels[levelIndex];
-            questionIndex = 0;
-            LoadQuestion();
+            if(levelIndex < loader.gameData.levels.Count)
+            {
+                isAnswering = true;
+                currentLevel = loader.gameData.levels[levelIndex];
+                questionIndex = 0;
+                LoadQuestion();
+            }
+            else
+            {
+                isAnswering= false;
+                currentLevel = null;
+                questionIndex = 0;
+                GameComplete();
+            }
         }
-        else
-        {
-            isAnswering= false;
-            currentLevel = null;
-            questionIndex = 0;
-            GameComplete();
-        }
+    }
+
+    public void StartGame()
+    {
+        isGameRunning = true;
+        level = 0;
+        slider.securitySlider.value = 1;
+        slider.currentValue = 1;
+        LoadLevel(0);
     }
 
     public void GameComplete()
     {
-        throw new NotImplementedException();
+        isGameRunning = false;
+        isAnswering = false;
+        currentLevel = null;
+        gameScreen.SetActive(false);
+        completeScreen.SetActive(true);
+        hackedPanel.SetActive(slider.securitySlider.value < 0.45f);
+
     }
 
     void LoadQuestion()
     {
+        if (!isGameRunning) return;
         if (questionIndex >= currentLevel.questions.Count)
         {
-            Debug.Log("Nivel completado");
+            Debug.Log("Nivel completado: "+level);
             level++;
             LoadLevel(level);
             return;
@@ -89,6 +115,7 @@ public class QuizGameManager : MonoBehaviour
         if (timeRemaining <= 0)
         {
             isAnswering = false;
+            slider.WrongAnswer();
             NextQuestion();
         }
     }
@@ -101,8 +128,7 @@ public class QuizGameManager : MonoBehaviour
         if (index == correct)
         {
             Debug.Log("Respuesta correcta");
-            score += 20;
-            slider.CorrectAnswer();
+            score += 20 * (int)slider.rewardMultiplier * (int)slider.stepPerQuestion;
         }
         else
         {
