@@ -2,144 +2,239 @@
   "levels": [
     {
       "id": 1,
-      "name": "IDOR y Enumeración",
-      "timePerQuestion": 8,
+      "name": "Acceso a recursos por identificador",
+      "timePerQuestion": 45,
       "questions": [
         {
-          "question": "Si cambias un número en una URL y ves datos de otra persona, eso es:",
-          "options": ["Debugging", "IDOR", "Caching"],
+          "question": "Un endpoint devuelve información distinta cuando cambias manualmente el ID en la URL. ¿Cuál es el principal problema de diseño?",
+          "options": [
+            "Falta de validación de formato del ID",
+            "El backend no valida la relación entre usuario y recurso",
+            "El frontend permite modificar la URL",
+            "El endpoint debería usar POST en lugar de GET"
+          ],
           "correctIndex": 1
         },
         {
-          "question": "¿Cuál es el mayor riesgo de usar IDs secuenciales?",
-          "options": ["Más almacenamiento", "Enumeración masiva de datos", "Mayor latencia"],
-          "correctIndex": 1
+          "question": "¿Por qué exponer identificadores numéricos consecutivos en un endpoint es una mala práctica?",
+          "options": [
+            "Porque dificulta el mantenimiento del código",
+            "Porque incrementa el consumo de memori",
+            "Porque facilita recorrer recursos que no pertenecen al usuario",
+            "Porque reduce el rendimiento de la base de datos"
+          ],
+          "correctIndex": 2
         },
         {
-          "question": "Un usuario autenticado ve datos de otros clientes. ¿El sistema es seguro?",
-          "options": ["Sí", "No, falla control de acceso"],
-          "correctIndex": 1
+          "question": "Un usuario autenticado puede acceder a datos de otros usuarios. ¿Qué control falta en el backend?",
+          "options": [
+            "Validación de sesión activa",
+            "Validación de origen de la petición",
+            "Validación de tipo de dato",
+            "Validación de permisos sobre el recurso solicitado"
+          ],
+          "correctIndex": 3
         }
       ]
     },
     {
       "id": 2,
-      "name": "Rate Limiting",
-      "timePerQuestion": 7,
+      "name": "Control de uso de endpoints",
+      "timePerQuestion": 45,
       "questions": [
         {
-          "question": "¿Qué permite la ausencia de rate limiting?",
-          "options": ["Mejor UX", "Ataques automatizados", "Menos CPU"],
+          "question": "¿Qué riesgo introduce un endpoint que acepta solicitudes ilimitadas sin restricciones?",
+          "options": [
+            "Mayor consumo de CPU",
+            "Uso abusivo de recursos del sistema",
+            "Problemas de compatibilidad entre clientes",
+            "Errores intermitentes de red"
+          ],
           "correctIndex": 1
         },
         {
-          "question": "Miles de peticiones por segundo desde una IP deberían provocar:",
-          "options": ["Nada", "Bloqueo o throttling", "Más ancho de banda"],
-          "correctIndex": 1
+          "question": "Una misma IP envía cientos de solicitudes por segundo al mismo endpoint. ¿Cuál es la respuesta más adecuada del sistema?",
+          "options": [
+            "Limitar o retrasar las solicitudes automáticamente",
+            "Aceptar todas las solicitudes",
+            "Escalar horizontalmente el servicio",
+            "Aumentar el tamaño del timeout"
+          ],
+          "correctIndex": 0
         }
       ]
     },
     {
       "id": 3,
-      "name": "Autenticación Débil",
-      "timePerQuestion": 6,
+      "name": "Diseño del proceso de autenticación",
+      "timePerQuestion": 45,
       "questions": [
         {
-          "question": "Mensajes distintos en login permiten:",
-          "options": ["UX clara", "Enumeración de usuarios", "Cacheo"],
+          "question": "El sistema muestra mensajes distintos cuando el usuario no existe y cuando la contraseña es incorrecta. ¿Qué problema genera esto?",
+          "options": [
+            "Confusión en la experiencia de usuario",
+            "Exposición de información sobre cuentas registradas",
+            "Violación de políticas de credenciales",
+            "Mayor tiempo de respuesta del servidor"
+          ],
           "correctIndex": 1
         },
         {
-          "question": "Usuario = contraseña es un ejemplo de:",
-          "options": ["MFA", "Credenciales débiles", "Tokenización"],
+          "question": "¿Qué implica permitir el uso de credenciales débiles donde el nombre de usuario y la contraseña son iguales?",
+          "options": [
+            "Un flujo de autenticación optimizado",
+            "Ausencia de políticas mínimas de credenciales",
+            "Un problema de almacenamiento de contraseñas",
+            "Un mecanismo válido para facilitar el acceso durante pruebas internas"
+          ],
           "correctIndex": 1
         }
       ]
     },
     {
       "id": 4,
-      "name": "Exposición de Información Sensible",
-      "timePerQuestion": 7,
+      "name": "Gestión de datos en las respuestas",
+      "timePerQuestion": 45,
       "questions": [
         {
-          "question": "¿Qué información NO debería devolverse sin autorización?",
-          "options": ["Idioma del sistema", "Roles y permisos internos", "Tema visual"],
-          "correctIndex": 1
+          "question": "¿Qué tipo de información debería evitarse en una respuesta si no es estrictamente necesaria?",
+          "options": [
+            "Configuración visual",
+            "Información básica utilizada para mejorar la experiencia del usuario",
+            "Mensajes de estado",
+            "Roles, permisos y datos internos del sistema"
+          ],
+          "correctIndex": 3
         },
         {
-          "question": "Enviar más datos de los necesarios viola el principio de:",
-          "options": ["Alta disponibilidad", "Mínimo privilegio", "Escalabilidad"],
-          "correctIndex": 1
+          "question": "Enviar más información de la necesaria en un endpoint va en contra del principio de:",
+          "options": [
+            "Separación de responsabilidades",
+            "Alta disponibilidad",
+            "Principio de mínimo privilegio",
+            "Escalabilidad horizontal"
+          ],
+          "correctIndex": 2
         },
         {
-          "question": "Respuestas diferentes para errores permiten:",
-          "options": ["Mejor UX", "Enumeración y fingerprinting", "Menor latencia"],
-          "correctIndex": 1
+          "question": "¿Por qué es recomendable que los errores tengan respuestas uniformes?",
+          "options": [
+            "Para evitar inferencias sobre la lógica interna",
+            "Para mejorar el diseño visual",
+            "Para reducir el tamaño de la respuesta",
+            "Para mejorar la compatibilidad con diferentes clientes"
+          ],
+          "correctIndex": 0
         }
       ]
     },
     {
       "id": 5,
-      "name": "Validaciones Backend",
-      "timePerQuestion": 6,
+      "name": "Validaciones del lado servidor",
+      "timePerQuestion": 45,
       "questions": [
         {
-          "question": "¿Dónde deben validarse los permisos de acceso?",
-          "options": ["Frontend", "Backend", "Navegador"],
+          "question": "¿Dónde debe tomarse la decisión final sobre si un usuario puede acceder a un recurso?",
+          "options": [
+            "En el frontend",
+            "En el navegador",
+            "En el JWT",
+            "En el backend"
+          ],
+          "correctIndex": 3
+        },
+        {
+          "question": "Confiar en valores enviados por el cliente sin verificarlos implica:",
+          "options": [
+            "Mayor flexibilidad del sistema",
+            "Riesgo de comportamiento no esperado",
+            "Mejor rendimiento",
+            "Menor complejidad del código"
+          ],
           "correctIndex": 1
         },
         {
-          "question": "Confiar en datos enviados por el cliente es:",
-          "options": ["Seguro", "Un riesgo de seguridad", "Una buena práctica"],
-          "correctIndex": 1
-        },
-        {
-          "question": "¿Qué identificador reduce el riesgo de enumeración?",
-          "options": ["Secuencial", "UUID", "Incremental"],
-          "correctIndex": 1
+          "question": "¿Qué tipo de identificador reduce la posibilidad de recorrer recursos ajenos?",
+          "options": [
+            "Numérico incremental",
+            "Clave autoincrementa",
+            "Índice de base de datos",
+            "lIdentificador no predecible"
+          ],
+          "correctIndex": 3
         }
       ]
     },
     {
       "id": 6,
-      "name": "Monitoreo y Detección",
-      "timePerQuestion": 5,
+      "name": "Observabilidad y comportamiento anómalo",
+      "timePerQuestion": 45,
       "questions": [
         {
-          "question": "¿Qué indica múltiples accesos secuenciales a distintos IDs?",
-          "options": ["Uso normal", "Posible enumeración", "Cacheo"],
+          "question": "Múltiples accesos secuenciales a distintos IDs en un corto período de tiempo suelen indicar:",
+          "options": [
+            "Uso normal del sistema",
+            "Un error de sincronización",
+            "Un problema de caché",
+            "Comportamiento anómalo que debe revisarse"
+          ],
+          "correctIndex": 3
+        },
+        {
+          "question": "¿Qué práctica permite identificar comportamientos inusuales rápidamente?",
+          "options": [
+            "Diseño responsivo",
+            "Logs con alertas automáticas",
+            "Más endpoints",
+            "Optimización de queries"
+          ],
           "correctIndex": 1
         },
         {
-          "question": "¿Qué ayuda a detectar ataques en tiempo real?",
-          "options": ["Logs y alertas", "Cambiar colores", "Más endpoints"],
-          "correctIndex": 0
-        },
-        {
-          "question": "El monitoreo continuo permite:",
-          "options": ["Responder a incidentes", "Evitar bugs", "Mejorar UX"],
-          "correctIndex": 0
+          "question": "¿Cuál es el objetivo principal de un sistema de monitoreo en una aplicación o infraestructura?",
+          "options": [
+            "Prevenir errores de código",
+            "Mejorar el rendimiento gráfico",
+            "Detectar y responder a incidentes",
+            "Reducir el número de usuarios"
+          ],
+          "correctIndex": 2
         }
       ]
     },
     {
       "id": 7,
-      "name": "Escenarios Reales (Boss Level)",
-      "timePerQuestion": 5,
+      "name": "Escenarios de arquitectura (Nivel Final)",
+      "timePerQuestion": 45,
       "questions": [
         {
-          "question": "Un atacante automatiza miles de consultas a guías. ¿Qué controles faltan?",
-          "options": ["CSS", "Rate limiting y autorización", "SEO"],
-          "correctIndex": 1
-        },
-        {
-          "question": "Un empleado accede a datos de otro sin permiso. ¿Qué vulnerabilidad es?",
-          "options": ["Broken Access Control", "XSS", "CSRF"],
+          "question": "Un servicio permite consultar miles de recursos sin restricciones. ¿Qué controles faltan implementar?",
+          "options": [
+            "Límites de uso y validación de permisos",
+            "Optimización del acceso a datos y paginación de resultados",
+            "Optimización de consultas",
+            "Balanceo de carga"
+          ],
           "correctIndex": 0
         },
         {
-          "question": "Cambiar un parámetro en la ruta devuelve datos internos. Esto es:",
-          "options": ["Feature", "Information Disclosure", "Compresión"],
+          "question": "Un empleado accede a información de otro sin justificación. ¿Qué falló?",
+          "options": [
+            "Control de acceso a nivel de recurso",
+            "Diseño de la interfaz",
+            "Modelo de datos",
+            "Configuración de red"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "question": "Modificar un parámetro en la ruta devuelve datos internos del sistema. ¿Cómo se puede prevenir?",
+          "options": [
+            "Centralizando la lógica de acceso en un middleware compartido",
+            "Validando en el backend que el solicitante tenga permisos sobre el recurso solicitado",
+            "Validando que el recurso exista antes de devolver la respuesta",
+            "Aplicando sanitización de parámetros en la ruta"
+          ],
           "correctIndex": 1
         }
       ]

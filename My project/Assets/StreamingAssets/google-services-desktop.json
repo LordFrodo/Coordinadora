@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "891326805780",
+    "project_id": "coordinadora-e9b01",
+    "storage_bucket": "coordinadora-e9b01.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891326805780:android:c9cfe77b7aa2ba4b21b401",
+        "android_client_info": {
+          "package_name": "com.kiggu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVqWgX3wdBGw2aBEISbt3v1FHhHGVY-Tg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

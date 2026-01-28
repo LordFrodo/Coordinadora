@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System;
+using Unity.VisualScripting;
 
 public class QuizGameManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class QuizGameManager : MonoBehaviour
     public TextMeshProUGUI[] optionTexts;
     public TextMeshProUGUI timerText;
     public CanvasGroup questionPanel;
+    public TMP_InputField InputName,InputMail;
+    public Button continueButton;
 
     [Header("Data")]
     public QuestionLoader loader;
@@ -30,6 +33,17 @@ public class QuizGameManager : MonoBehaviour
     public TextMeshProUGUI titleCompleteGame;
     public TextMeshProUGUI bodyCompleteGame;
 
+    private void Awake()
+    {
+        InputName.onEndEdit.AddListener((value) => CheckUserData());
+        InputMail.onEndEdit.AddListener((value) => CheckUserData());
+    }
+
+    private void CheckUserData()
+    {
+        if (!string.IsNullOrEmpty(InputName.text) && !string.IsNullOrEmpty(InputMail.text)) continueButton.interactable = true;
+        else continueButton.interactable = false;
+    }
 
     public void LoadLevel(int levelIndex)
     {
@@ -69,6 +83,12 @@ public class QuizGameManager : MonoBehaviour
         gameScreen.SetActive(false);
         completeScreen.SetActive(true);
         hackedPanel.SetActive(slider.securitySlider.value < 0.45f);
+        UserData userData = new UserData();
+        userData.Name = InputName.text;
+        userData.Mail = InputMail.text;
+        userData.Score = score;
+
+        FireBaseManager.Instance.UploadUserScore(userData);
 
     }
 
@@ -128,7 +148,7 @@ public class QuizGameManager : MonoBehaviour
         if (index == correct)
         {
             Debug.Log("Respuesta correcta");
-            score += 20 * (int)slider.rewardMultiplier * (int)slider.stepPerQuestion;
+            score += 20 * (int)slider.rewardMultiplier;
         }
         else
         {
