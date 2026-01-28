@@ -1,0 +1,1 @@
+C:\Users\mfvel\Downloads\Repos\Coordinadora\My project\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\1k4c3a29\obj\arm64-v8a

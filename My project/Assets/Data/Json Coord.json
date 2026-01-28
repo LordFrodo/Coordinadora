@@ -157,9 +157,9 @@
           "question": "¿Qué tipo de identificador reduce la posibilidad de recorrer recursos ajenos?",
           "options": [
             "Numérico incremental",
-            "Clave autoincrementa",
+            "Clave autoincremental",
             "Índice de base de datos",
-            "lIdentificador no predecible"
+            "Identificador no predecible"
           ],
           "correctIndex": 3
         }
