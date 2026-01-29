@@ -9,6 +9,7 @@ public class QuizGameManager : MonoBehaviour
 {
     [Header("UI")]
     public TextMeshProUGUI questionText;
+    public TextMeshProUGUI finalText;
     public Button[] optionButtons;
     public TextMeshProUGUI[] optionTexts;
     public TextMeshProUGUI timerText;
@@ -83,6 +84,8 @@ public class QuizGameManager : MonoBehaviour
         gameScreen.SetActive(false);
         completeScreen.SetActive(true);
         hackedPanel.SetActive(slider.securitySlider.value < 0.45f);
+        if (slider.securitySlider.value < 0.75f) finalText.text = "Tienes conocimientos en ciberseguridad, sin embargo aun puedes mejorar! Sigue asi!";
+        else finalText.text = "Tienes conocimientos de buenas practicas de ciberseguridad, sigue asi!";
         UserData userData = new UserData();
         userData.Name = InputName.text;
         userData.Mail = InputMail.text;

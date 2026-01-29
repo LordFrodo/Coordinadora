@@ -1941,6 +1941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuizGameManager
   questionText: {fileID: 688100765}
+  finalText: {fileID: 614311813}
   optionButtons:
   - {fileID: 954927406}
   - {fileID: 1362150282}
@@ -3430,7 +3431,7 @@ GameObject:
   - component: {fileID: 614311814}
   - component: {fileID: 614311813}
   m_Layer: 0
-  m_Name: Questions
+  m_Name: Final Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -7,20 +7,22 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:891326805780:android:c9cfe77b7aa2ba4b21b401",
+        "mobilesdk_app_id": "1:891326805780:ios:6e4d4c5ff279a5c421b401",
         "android_client_info": {
           "package_name": "com.kiggu"
         }
       },
-      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDVqWgX3wdBGw2aBEISbt3v1FHhHGVY-Tg"
+          "current_key": "AIzaSyD8a4FI0yodSmaQKXiBqY9nobdiYVluuSg"
         }
       ],
       "services": {
+        "analytics_service": {
+          "status": 0
+        },
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "status": 1
         }
       }
     }
