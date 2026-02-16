@@ -1,4 +1,4 @@
-mergeInto(LibraryManager.library, {
+﻿mergeInto(LibraryManager.library, {
 
     Firestore_SetDocument: function (collectionPtr, docIdPtr, jsonPtr, objectNamePtr, callbackPtr, errorPtr)
     {
@@ -9,15 +9,30 @@ mergeInto(LibraryManager.library, {
         var callback = UTF8ToString(callbackPtr);
         var errorCallback = UTF8ToString(errorPtr);
 
+        console.log("Firestore_SetDocument:", collection, docId);
+
+        if (typeof firebase === "undefined") {
+            console.error("Firebase no está definido");
+            return;
+        }
+
         firebase.firestore()
             .collection(collection)
             .doc(docId)
             .set(JSON.parse(json), { merge: true })
             .then(function () {
-                unityInstance.SendMessage(objectName, callback, "success");
+
+                if (window.unityInstance != null)
+                    window.unityInstance.SendMessage(objectName, callback, "success");
+                else
+                    console.error("unityInstance no está definido");
+
             })
             .catch(function (error) {
-                unityInstance.SendMessage(objectName, errorCallback, error.message);
+
+                if (window.unityInstance != null)
+                    window.unityInstance.SendMessage(objectName, errorCallback, error.message);
+
             });
     },
 
@@ -29,6 +44,8 @@ mergeInto(LibraryManager.library, {
         var callback = UTF8ToString(callbackPtr);
         var errorCallback = UTF8ToString(errorPtr);
 
+        console.log("Firestore_GetTopScores:", collection, limit);
+
         firebase.firestore()
             .collection(collection)
             .orderBy("Score", "desc")
@@ -39,16 +56,24 @@ mergeInto(LibraryManager.library, {
                 var results = [];
 
                 querySnapshot.forEach(function (doc) {
-                    results.push(doc.data());
+                    var data = doc.data();
+                    data.id = doc.id;
+                    results.push(data);
                 });
 
-                unityInstance.SendMessage(objectName, callback, JSON.stringify(results));
+                if (window.unityInstance != null)
+                    window.unityInstance.SendMessage(objectName, callback, JSON.stringify(results));
+
             })
             .catch(function (error) {
-                unityInstance.SendMessage(objectName, errorCallback, error.message);
+
+                if (window.unityInstance != null)
+                    window.unityInstance.SendMessage(objectName, errorCallback, error.message);
+
             });
     },
-       Firestore_StartTopScoresListener: function (collectionPtr, limitPtr, objectNamePtr, callbackPtr, errorPtr)
+
+    Firestore_StartTopScoresListener: function (collectionPtr, limitPtr, objectNamePtr, callbackPtr, errorPtr)
     {
         var collection = UTF8ToString(collectionPtr);
         var limit = parseInt(UTF8ToString(limitPtr));
@@ -56,29 +81,39 @@ mergeInto(LibraryManager.library, {
         var callback = UTF8ToString(callbackPtr);
         var errorCallback = UTF8ToString(errorPtr);
 
-        try {
+        console.log("Iniciando listener:", collection);
 
-            window.topScoreUnsubscribe = firebase.firestore()
-                .collection(collection)
-                .orderBy("Score", "desc")
-                .limit(limit)
-                .onSnapshot(function (snapshot) {
+        if (typeof firebase === "undefined") {
+            console.error("Firebase no está definido");
+            return;
+        }
 
-                    var results = [];
+        window.topScoreUnsubscribe = firebase.firestore()
+            .collection(collection)
+            .orderBy("Score", "desc")
+            .limit(limit)
+            .onSnapshot(function (snapshot) {
 
-                    snapshot.forEach(function (doc) {
-                        results.push(doc.data());
-                    });
+                var results = [];
 
-                    unityInstance.SendMessage(objectName, callback, JSON.stringify(results));
-                },
-                function (error) {
-                    unityInstance.SendMessage(objectName, errorCallback, error.message);
+                snapshot.forEach(function (doc) {
+                    var data = doc.data();
+                    data.id = doc.id;
+                    results.push(data);
                 });
 
-        } catch (error) {
-            unityInstance.SendMessage(objectName, errorCallback, error.message);
-        }
+                console.log("Snapshot recibido:", results.length);
+
+                if (window.unityInstance != null)
+                    window.unityInstance.SendMessage(objectName, callback, JSON.stringify(results));
+
+            },
+            function (error) {
+
+                if (window.unityInstance != null)
+                    window.unityInstance.SendMessage(objectName, errorCallback, error.message);
+
+            });
     },
 
     Firestore_StopTopScoresListener: function ()
@@ -87,6 +122,8 @@ mergeInto(LibraryManager.library, {
         {
             window.topScoreUnsubscribe();
             window.topScoreUnsubscribe = null;
+            console.log("Listener detenido");
         }
     }
+
 });
