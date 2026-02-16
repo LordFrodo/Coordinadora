@@ -1,14 +1,9 @@
-using Firebase.Firestore;
+using System;
 
-[FirestoreData]
-public struct UserData
+[Serializable]
+public class UserData
 {
-    [FirestoreProperty]
-    public string Name { get; set; }
-
-    [FirestoreProperty]
-    public string Mail { get; set; }
-
-    [FirestoreProperty]
-    public int Score { get; set; }
+    public string Name;
+    public string Mail;
+    public int Score;
 }
